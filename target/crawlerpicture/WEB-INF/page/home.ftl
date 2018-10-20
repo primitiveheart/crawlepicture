@@ -50,7 +50,9 @@
         <select multiple="" class="ui fluid normal dropdown urls">
         <#if urls?? && urls?size gt 0>
             <#list urls as u>
-                <option value="${u.urlSite}">${u.urlSite}</option>
+                <#if u.urlSite??>
+                    <option value="${u.urlSite}">${u.urlSite}</option>
+                </#if>
             </#list>
         </#if>
         </select>
@@ -522,8 +524,7 @@
                                     ' </div> <div class="content"> <a class="header">'+
                                     midlleCrawlers[i].pictureName+'</a> <div class="meta"> <span><a href="'+
                                     midlleCrawlers[i].webURL+'">该条信息来源于</a></span> </div> <div class="description"> <p>'+
-                                    midlleCrawlers[i].pictureDescription+'</p> </div><div class="extra"><div class="ui right floated download primary button" ' +
-                                    'data-url="'+midlleCrawlers[i].webURL+'">下载</div>' +
+                                    midlleCrawlers[i].pictureDescription+'</p> </div>' +
                                     '<div class="ui right floated lookup primary button" data-url="'+midlleCrawlers[i].webURL+'">浏览</div></div></div> </div>');
                             $item.appendTo($(".ui.items." + queryClass));
                         }
@@ -534,7 +535,7 @@
                         var url = $(this).attr("data-url");
                         lookup(url);
                     })
-                    //-------------------------下载------------------------
+                   // -------------------------下载------------------------
                     $(".download").on("click", function(){
                         var url = $(this).attr("data-url");
                         download(url);
@@ -569,8 +570,7 @@
                                            '</div> <div class="content"> <a class="header">'+
                                            midlleCrawlers[i].pictureName+'</a> <div class="meta"> <span><a href="'+
                                            midlleCrawlers[i].webURL+'">该条信息来源于</a></span> </div> <div class="description"> <p>'+
-                                           midlleCrawlers[i].pictureDescription+'</p> </div><div class="extra"><div class="ui right floated download primary button" ' +
-                                           'data-url="'+midlleCrawlers[i].webURL+'">下载</div>' +
+                                           midlleCrawlers[i].pictureDescription+'</p> </div>' +
                                            '<div class="ui right floated lookup primary button" data-url="'+midlleCrawlers[i].webURL+'">浏览</div></div> </div> </div>');
                                    $item.appendTo($(".ui.items." + queryClass));
                                }

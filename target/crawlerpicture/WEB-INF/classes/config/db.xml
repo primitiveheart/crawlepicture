@@ -32,7 +32,6 @@
         <property name="initialSize" value="#{dbproperties.initialSize}"/>
         <property name="maxActive" value="#{dbproperties.maxActive}"/>
         <property name="minIdle" value="#{dbproperties.minIdle}"/>
-        <property name="maxIdle" value="#{dbproperties.maxIdle}"/>
         <property name="maxWait" value="#{dbproperties.maxWait}"/>
 
         <property name="removeAbandoned" value="true"/>
